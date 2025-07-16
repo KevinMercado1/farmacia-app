@@ -1,0 +1,48 @@
+POST http://localhost:5007/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "usuario_prueba",
+  "email": "test@example.com",
+  "password": "password123"
+}
+
+###
+
+POST http://localhost:5007/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "test@example.com",
+  "password": "password123"
+}
+
+###
+
+POST http://localhost:5007/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "Kevin",
+  "email": "Km@example.com",
+  "password": "123",
+  "role": "admin"
+}
+
+###
+GET http://localhost:5007/api/products
+
+###
+
+POST http://localhost:5007/api/products
+Content-Type: application/json
+x-auth-token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjg2ZDc4NjMyNWUzNDk0OTE2ODQ2Y2Y0Iiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTc1MjAwNDcwNywiZXhwIjoxNzUyMDA4MzA3fQ.xBNHfjv3W6TeGKUhOwr1--SfAyviPhtmqETyY1Wm6IA",
+
+{
+  "name": "Ibuprofeno 400mg",
+  "description": "Analgésico y antiinflamatorio para el dolor de cabeza y muscular.",
+  "price": 5.75,
+  "stock": 100,
+  "imageUrl": "https://example.com/ibuprofeno.jpg",
+  "category": "Analgésicos"
+}

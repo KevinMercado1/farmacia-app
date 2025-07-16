@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb_container
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - app-network
+
+  backend:
+    build: ./backend
+    container_name: backend_container
+    ports:
+      - '5007:5007'
+    environment:
+      NODE_ENV: production
+      MONGO_URI: mongodb://mongodb:27017/farmacia
+      JWT_SECRET: supersecreto
+      PORT: 5007
+    depends_on:
+      - mongodb
+    networks:
+      - app-network
+
+  frontend:
+    build: ./frontend
+    container_name: frontend_container
+    ports:
+      - '80:80'
+    depends_on:
+      - backend
+    networks:
+      - app-network
+
+volumes:
+  mongodb_data:
+
+networks:
+  app-network:
+    driver: bridge
