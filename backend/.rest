@@ -4,7 +4,8 @@ Content-Type: application/json
 {
   "username": "usuario_prueba",
   "email": "test@example.com",
-  "password": "password123"
+  "password": "password123",
+  "role": "admin"
 }
 
 ###
@@ -23,9 +24,9 @@ POST http://localhost:5007/api/auth/register
 Content-Type: application/json
 
 {
-  "username": "Kevin",
+  "username": "KevinM",
   "email": "Km@example.com",
-  "password": "123",
+  "password": "KevinM123",
   "role": "admin"
 }
 
@@ -36,7 +37,7 @@ GET http://localhost:5007/api/products
 
 POST http://localhost:5007/api/products
 Content-Type: application/json
-x-auth-token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjg2ZDc4NjMyNWUzNDk0OTE2ODQ2Y2Y0Iiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTc1MjAwNDcwNywiZXhwIjoxNzUyMDA4MzA3fQ.xBNHfjv3W6TeGKUhOwr1--SfAyviPhtmqETyY1Wm6IA",
+x-auth-token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjljZDkxMWFkMzI2NDdkNTg1YmVmZTFkIiwicm9sZSI6ImN1c3RvbWVyIn0sImlhdCI6MTc3NTA3OTc3MCwiZXhwIjoxNzc1MDgzMzcwfQ.gLYhdgZlvHXUeltLM-GnX2ditHxAzxtCcTYU8rwWvBM",
 
 {
   "name": "Ibuprofeno 400mg",

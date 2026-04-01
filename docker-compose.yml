@@ -18,7 +18,7 @@ services:
       - '5007:5007'
     environment:
       NODE_ENV: production
-      MONGO_URI: mongodb://mongodb:27017/farmacia
+      MONGODB_URI: mongodb://mongodb:27017/farmacia
       JWT_SECRET: supersecreto
       PORT: 5007
     depends_on:
